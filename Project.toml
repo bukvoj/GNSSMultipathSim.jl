@@ -1,0 +1,13 @@
+name = "GNSSMultipathSim"
+uuid = "d01bb374-873d-4488-a6bc-0882c0db5243"
+authors = ["Jakub Kaspar"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.6.7"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
