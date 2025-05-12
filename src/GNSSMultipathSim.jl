@@ -4,7 +4,7 @@ using GeoStats, Meshes
 using LinearAlgebra
 
 include("meshfixes.jl")
-indlude("geometries.jl")
+include("geometries.jl")
 include("path_checking.jl")
 include("mpsim.jl")
 

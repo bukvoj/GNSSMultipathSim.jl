@@ -1,4 +1,8 @@
-function mirror(wall, recpos)
+function vec2pt(vec, pttype, coords::Cartesian3D{T}) where T
+    return GeoStats.Point{pttype}(Cartesian3D{T}(vec...))
+end
+
+function mirror(wall, recpos::GeoStats.Point{T}) where T
     pts = pointify(wall)
     v1 = pts[2] - pts[1]
     v2 = pts[3] - pts[1]
@@ -10,8 +14,10 @@ function mirror(wall, recpos)
     dist = v2p.coords[1].val *n[1] + v2p.coords[2].val * n[2] + v2p.coords[3].val * n[3]
 
     mir = recpos - GeoStats.Point((2 * dist * n)...)
-    return GeoStats.Point(mir...)
+    return vec2pt(mir, T, recpos.coords)
 end
+
+
 
 
 function incidenceangle(triangle, ray; unit = :rad)

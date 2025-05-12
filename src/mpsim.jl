@@ -6,7 +6,7 @@ function getmpmeasurements(recpos, svpos, walls)
     # wallheights: list of wall heights in ENU frame
 
     measurements = zeros(length(svpos))u"m" # measurements for each satellite
-    mode = zeros(Int, length(svpos)) # 0: LOS, 1: MPATH, 2: NO LOS or MPATH
+    mode = [:blocked for i in eachindex(svpos)] # 0: LOS, 1: MPATH, 2: NO LOS or MPATH
 
     projections = [mirror(wall, recpos) for wall in walls] # project the receiver through each wall
 
